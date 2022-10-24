@@ -77,6 +77,19 @@ public class PersonneDto implements Serializable {
 	public void setAgeActuelle(int ageActuelle) {
 		AgeActuelle = ageActuelle;
 	}
+
+	public PersonneDto(long id, String nom, String prenom, LocalDate dateDeNaissance, int version) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		DateDeNaissance = dateDeNaissance;
+		this.version = version;
+	}
+
+	public PersonneDto() {
+		super();
+	}
 	
 	
 	
