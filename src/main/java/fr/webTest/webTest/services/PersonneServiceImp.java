@@ -43,11 +43,10 @@ public class PersonneServiceImp implements PersonneService {
 	public PersonneDto saveOrUpdate(PersonneDto pDto) throws Exception {
 		Personne p = DtoTools.convert(pDto, Personne.class);
 		
-		LocalDate DateMaintenant = LocalDate.now();
+	
+	
 		
-		Boolean MoinsDe150Ans =  DateMaintenant.getDayOfYear() - p.getDateDeNaissance().getYear() <= 150;
-		
-		if(MoinsDe150Ans){
+		if(pDto.getAgeActuelle() < 150){
 		
 		try {
 			p = personneRepository.saveAndFlush(p);
